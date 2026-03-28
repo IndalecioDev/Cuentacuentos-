@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>El Libro de las Sombras</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="stars"></div>
+
+  <!-- Vela izquierda -->
+  <svg id="candle-left" viewBox="0 0 60 110" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="fg1" cx="50%" cy="80%">
+        <stop offset="0%"   stop-color="#f97316"/>
+        <stop offset="55%"  stop-color="#fbbf24"/>
+        <stop offset="100%" stop-color="#fffbeb" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="cg1" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0%"   stop-color="#c8b88a"/>
+        <stop offset="50%"  stop-color="#f5ead0"/>
+        <stop offset="100%" stop-color="#b8a070"/>
+      </linearGradient>
+    </defs>
+    <ellipse cx="30" cy="60" rx="34" ry="28" fill="rgba(251,191,36,0.07)"/>
+    <rect x="22" y="34" width="16" height="76" rx="2" fill="url(#cg1)"/>
+    <ellipse cx="30" cy="33" rx="8" ry="3" fill="#c8a870" opacity="0.5"/>
+    <line x1="30" y1="27" x2="30" y2="33" stroke="#5a3a1a" stroke-width="1.2"/>
+    <g class="flame-anim">
+      <ellipse cx="30" cy="19" rx="6" ry="10" fill="url(#fg1)" opacity="0.95"/>
+    </g>
+  </svg>
+
+  <!-- Vela derecha -->
+  <svg id="candle-right" viewBox="0 0 60 110" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <radialGradient id="fg2" cx="50%" cy="80%">
+        <stop offset="0%"   stop-color="#f97316"/>
+        <stop offset="55%"  stop-color="#fbbf24"/>
+        <stop offset="100%" stop-color="#fffbeb" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="cg2" x1="0" x2="1" y1="0" y2="0">
+        <stop offset="0%"   stop-color="#c8b88a"/>
+        <stop offset="50%"  stop-color="#f5ead0"/>
+        <stop offset="100%" stop-color="#b8a070"/>
+      </linearGradient>
+    </defs>
+    <ellipse cx="30" cy="60" rx="34" ry="28" fill="rgba(251,191,36,0.07)"/>
+    <rect x="22" y="34" width="16" height="76" rx="2" fill="url(#cg2)"/>
+    <ellipse cx="30" cy="33" rx="8" ry="3" fill="#c8a870" opacity="0.5"/>
+    <line x1="30" y1="27" x2="30" y2="33" stroke="#5a3a1a" stroke-width="1.2"/>
+    <g class="flame-anim" style="animation-delay: 0.35s">
+      <ellipse cx="30" cy="19" rx="6" ry="10" fill="url(#fg2)" opacity="0.95"/>
+    </g>
+  </svg>
+
+  <!-- Contenido principal -->
+  <div id="main">
+
+    <div id="header">
+      <h1>El Libro de las Sombras</h1>
+      <div id="ornament">✦ ✦ ✦</div>
+      <p>Escoge un cuento. Apaga la luz. Escucha.</p>
+    </div>
+
+    <!-- Grid de cuentos -->
+    <div id="story-grid"></div>
+
+    <!-- Lector -->
+    <div id="reader">
+      <button id="back-btn" onclick="showMenu()">← Volver al libro</button>
+      <h2 id="story-title"></h2>
+      <div id="story-divider">― ✦ ―</div>
+      <div id="story-body"></div>
+      <div id="nav-bar">
+        <button class="nav-btn" id="prev-btn" onclick="changePage(-1)">← Anterior</button>
+        <span id="page-indicator"></span>
+        <button class="nav-btn" id="next-btn" onclick="changePage(1)">Siguiente →</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
