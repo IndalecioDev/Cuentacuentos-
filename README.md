@@ -109,10 +109,6 @@ background: #0a0608;                          /* fondo oscuro */
 
 ---
 
-## 📄 Licencia
 
-MIT — libre para uso personal y comercial.
-
----
 
 *Escoge un cuento. Apaga la luz. Escucha.*
